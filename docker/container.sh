@@ -40,6 +40,10 @@ start_container() {
     sudo udevadm control --reload-rules
     sudo udevadm trigger
 
+   # Export ROS variables and Docker settings
+    export ROS_DOMAIN_ID=16
+    export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
+
     # Pull the latest images
     docker compose -f "${SCRIPT_DIR}/docker-compose.yml" pull
 
