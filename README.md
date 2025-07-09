@@ -1,4 +1,4 @@
-# 🦾 OpenMANIPULATOR
+# 🦾 OpenMANIPULATOR Custom Forge
 
 ## Overview
 
@@ -38,7 +38,7 @@ This method provides an isolated environment with all dependencies pre-installed
 
 2. **Clone the Repository**
    ```bash
-   git clone https://github.com/ROBOTIS-GIT/open_manipulator.git
+   git clone https://github.com/SybilSystem001/open_manipulator_x.git
    cd open_manipulator
    ```
 
