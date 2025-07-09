@@ -12,6 +12,18 @@ ENV PYTHONPATH=$PYTHONPATH:/usr/local/lib
 # Set environment variables
 ENV DEBIAN_FRONTEND=noninteractive
 
+# Install common system dependencies
+RUN apt-get update && apt-get install -y wget \
+    apt-get update && apt-get install -y \
+    ros-${ROS_DISTRO}-hardware-interface \
+    ros-${ROS_DISTRO}-controller-manager \
+    ros-${ROS_DISTRO}-ros2-controllers \
+    ros-${ROS_DISTRO}-tf-transformations \
+    ros-${ROS_DISTRO}-pal-statistics \
+    vim \
+    && apt-get install -y ros-${ROS_DISTRO}-moveit-* --no-install-recommends \
+    && rm -rf /var/lib/apt/lists/*
+
 # Install realsense dependencies
 RUN apt-get update && apt-get install -y \
     libusb-1.0-0-dev \
