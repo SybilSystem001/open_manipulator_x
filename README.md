@@ -42,7 +42,12 @@ This method provides an isolated environment with all dependencies pre-installed
    cd open_manipulator
    ```
 
-3. **Container Management**
+3. **Build Container Image**
+   #Inside the folder where the dockerfile (Open_manipulator_x/docker)is loceted run
+   docker build -t forge-open-manipulator .
+
+5. **Container Management**
+
    The repository includes a container management script with the following commands:
 
    ```bash
@@ -61,7 +66,7 @@ This method provides an isolated environment with all dependencies pre-installed
 
    [***Note***] <u>When stopping the container, you'll be asked for confirmation as this will remove all unsaved data in the container.</u>
 
-4. **Data Persistence**
+6. **Data Persistence**
    The container maps the following directories for data persistence:
    - `./docker/workspace:/workspace` - The workspace directory inside the docker folder is mapped to `/workspace` inside the container
 
