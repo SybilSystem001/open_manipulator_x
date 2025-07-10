@@ -101,7 +101,7 @@ Follow these steps if you prefer to install directly on your host system:
    git clone -b jazzy https://github.com/ROBOTIS-GIT/DynamixelSDK.git && \
    git clone -b jazzy https://github.com/ROBOTIS-GIT/dynamixel_interfaces.git && \
    git clone -b jazzy https://github.com/ROBOTIS-GIT/dynamixel_hardware_interface.git && \
-   git clone -b jazzy https://github.com/ROBOTIS-GIT/open_manipulator.git
+   git clone -b jazzyhttps://github.com/SybilSystem001/open_manipulator_x.git
    ```
 
 4. **Install ROS 2 Dependencies**
