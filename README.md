@@ -2,11 +2,7 @@
 
 ## Overview
 
-This repository provides an integrated management package for **ROBOTIS** robotic arms, including:
-
-- **OMY**
-- **OpenMANIPULATOR-X**
-- **Leader-Follower Manipulator System**
+This repository provides an integrated management package for **ROBOTIS** robotic arm the **OpenMANIPULATOR-X**
 
 With this integration, all Robotis manipulators are managed under a unified package to ensure better compatibility and functionality.
 
@@ -16,14 +12,12 @@ This package supports **ROS 2 Jazzy** and **Gazebo Harmonic** on Ubuntu 24.04, o
 
 - **Integration of MoveIt 2 for Enhanced Motion Planning**
 - **Graphical User Interface (GUI) Implementation and Support**
-- **Teleoperation (Teleop) Capabilities**
-- **Leader-Follower Control Mechanism with Gravity Compensation for Imitation Learning**
 
 # **OpenMANIPULATOR User Guide**
 
 ## **1. Introduction**
 
-The **OMY** is a 6-DOF robotic arm designed for advanced robotic manipulation tasks. This ROS 2 package provides seamless integration, enhanced control, and versatile functionality for simulation and hardware applications.
+The **OMX** is a 4-DOF robotic arm designed for advanced robotic manipulation tasks. This ROS 2 package provides seamless integration, enhanced control, and versatile functionality for simulation and hardware applications.
 
 ## **2. Installation Methods**
 
@@ -39,7 +33,7 @@ This method provides an isolated environment with all dependencies pre-installed
 2. **Clone the Repository**
    ```bash
    git clone https://github.com/SybilSystem001/open_manipulator_x.git
-   cd open_manipulator
+   cd open_manipulator_x
    ```
 
 3. **Build Container Image**
@@ -72,6 +66,7 @@ This method provides an isolated environment with all dependencies pre-installed
 
    [***Important***] <u>Data Persistence Rules:
    - Data in `/workspace` inside the container is saved to `docker/workspace` on your host
+   - To exit container type "exit" to keep current cointainer without deleting any saved data in the container (this is not persistant meaning it dissapears when the container is stopped)
    - Container restart (using `docker restart`) maintains all data
    - Container removal (using `container.sh stop`) will remove all data except what's in the mapped `/workspace` directory
    - Always save your work in the `/workspace` directory to ensure it persists after container removal</u>
@@ -145,91 +140,39 @@ Below is a comprehensive list of available launch files, grouped by function. Us
 ### **A. Hardware Launch (Real Robot)**
 
 ```bash
-# Launch OMY 3M hardware
-ros2 launch open_manipulator_bringup omy_3m.launch.py
-
-# Launch OMY F3M hardware
-ros2 launch open_manipulator_bringup omy_f3m.launch.py
-
 # Launch OpenMANIPULATOR-X hardware
 ros2 launch open_manipulator_bringup omx.launch.py
+ros2 launch open_manipulator_bringup omx.launch.py port_name:=/dev/ttyACM0
 
-# Launch F3M follower for AI leader-follower mode
-ros2 launch open_manipulator_bringup omy_f3m_follower_ai.launch.py
-
-# Launch L100 as leader for AI leader-follower mode
-ros2 launch open_manipulator_bringup omy_l100_leader_ai.launch.py
-
-# Launch the full AI teleoperation leader-follower stack (runs both leader and follower)
-ros2 launch open_manipulator_bringup omy_ai.launch.py
 ```
 
 ### **B. Simulation (Gazebo)**
 
 ```bash
-# Simulate OMY 3M in Gazebo
-ros2 launch open_manipulator_bringup omy_3m_gazebo.launch.py
-
-# Simulate OMY F3M in Gazebo
-ros2 launch open_manipulator_bringup omy_f3m_gazebo.launch.py
 
 # Simulate OpenMANIPULATOR-X in Gazebo
 ros2 launch open_manipulator_bringup omx_gazebo.launch.py
 
-# Simulate F3M follower in AI mode in Gazebo
-ros2 launch open_manipulator_bringup omy_f3m_follower_ai_gazebo.launch.py
 ```
 
-### **C. Specialized/Utility Launch**
+
+### **C. GUI Launch**
 
 ```bash
-# Packs the OMY 3M manipulator (can also be used for OMY F3M)
-ros2 launch open_manipulator_bringup omy_3m_pack.launch.py
-
-# Unpacks the OMY 3M manipulator (can also be used for OMY F3M)
-ros2 launch open_manipulator_bringup omy_3m_unpack.launch.py
-
-# Launch Intel RealSense camera nodes
-ros2 launch open_manipulator_bringup camera_realsense.launch.py
-```
-
-### **D. GUI Launch**
-
-```bash
-# GUI for OMY 3M
-ros2 launch open_manipulator_gui omy_3m_gui.launch.py
-
-# GUI for OMY F3M
-ros2 launch open_manipulator_gui omy_f3m_gui.launch.py
-
 # GUI for OpenMANIPULATOR-X
 ros2 launch open_manipulator_gui omx_gui.launch.py
 ```
 
-### **E. MoveIt! Launch**
+### **D. MoveIt! Launch**
 
 ```bash
-# MoveIt! for OMY 3M
-ros2 launch open_manipulator_moveit_config omy_3m_moveit.launch.py
-
-# MoveIt! for OMY F3M
-ros2 launch open_manipulator_moveit_config omy_f3m_moveit.launch.py
-
 # MoveIt! for OpenMANIPULATOR-X
 ros2 launch open_manipulator_moveit_config omx_moveit.launch.py
 ```
 
-### **F. Description Launch**
+### **E. Description Launch**
 
 ```bash
-# Load robot description for OMY 3M
-ros2 launch open_manipulator_description omy_3m.launch.py
-
-# Load robot description for OMY F3M
-ros2 launch open_manipulator_description omy_f3m.launch.py
-
-# Load robot description for OMY L100
-ros2 launch open_manipulator_description omy_l100.launch.py
 
 # Load robot description for OpenMANIPULATOR-X
 ros2 launch open_manipulator_description omx.launch.py
@@ -241,11 +184,9 @@ ros2 launch open_manipulator_description omx.launch.py
 
 - **Hardware Mode:** For real robot operation, use the hardware launch files from section A.
 - **Simulation Mode:** For Gazebo simulation, use the launch files from section B.
-- **AI Leader-Follower Mode:** Use `omy_ai.launch.py` to start both leader and follower, or launch `omy_f3m_follower_ai.launch.py` and `omy_l100_leader_ai.launch.py` separately for advanced setups.
-- **Specialized Modes:** Use pack/unpack launch files for special poses, and camera launch for vision integration.
 
 ## (Legacy) ROBOTIS e-Manual for OpenMANIPULATOR-X
 
 - [ROBOTIS e-Manual](https://emanual.robotis.com/docs/en/platform/openmanipulator_x/overview/)
 
-The **OpenMANIPULATOR-X operation method** is similar to **OMY**, and the e-Manual is currently being updated.
+The OpenMANIPULATOR-X  and the e-Manual is currently being updated.
