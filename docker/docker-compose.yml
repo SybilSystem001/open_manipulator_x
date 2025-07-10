@@ -4,7 +4,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: forge-open-manipulator:latest
+    image: sybilsystem001/omx_forge:latest
     tty: true
     restart: always
     cap_add:
