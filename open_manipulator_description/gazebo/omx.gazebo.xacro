@@ -8,7 +8,7 @@
     <transmission name="${trans}">
       <type>transmission_interface/SimpleTransmission</type>
       <joint name="${joint}">
-        </--<hardwareInterface>PositionJointInterface</hardwareInterface> -->
+        <!--<hardwareInterface>PositionJointInterface</hardwareInterface> -->
         <hardwareInterface>position</hardwareInterface>
       </joint>
       <actuator name="${actuator}">
