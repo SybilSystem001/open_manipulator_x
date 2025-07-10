@@ -113,7 +113,7 @@ Follow these steps if you prefer to install directly on your host system:
 
 5. **Build the Package**
    ```bash
-   colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release
+   colcon build --symlink-install --executor sequential --cmake-args -DCMAKE_BUILD_TYPE=Release
    ```
 
 6. **Source the Workspace**
