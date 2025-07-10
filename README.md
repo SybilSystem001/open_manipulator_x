@@ -128,7 +128,22 @@ Follow these steps if you prefer to install directly on your host system:
    source ~/.bashrc
    ```
 
-8. **Create and apply udev rules**
+8. **Set environment variables to conect to the turtlebot 4 (Runing ROS@ Jazzy)**
+   ```bash
+   # open the script located in the folder, with the same environment variables as the TB4 current values:
+   #Ip address: 192.168.0.1# (this value is on the turtlebot screen)
+   #discovery server id: 16
+   #create3 port:8080 
+   ./configure_discovery.sh
+   #In order to save changes execute:
+   source ~/.bashrc
+   #Restart the daemon
+   ros2 daemon stop; ros2 daemon start
+   #Check the topic list to see if they are connected
+   ros2 topic list
+   ```
+
+10. **Create and apply udev rules**
    ```bash
    ros2 run open_manipulator_bringup om_create_udev_rules
    ```
