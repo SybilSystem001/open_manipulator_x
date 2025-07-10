@@ -1,4 +1,4 @@
-# 🦾 OpenMANIPULATOR
+# OpenMANIPULATOR Custom Forge
 
 ## Overview
 
@@ -38,11 +38,16 @@ This method provides an isolated environment with all dependencies pre-installed
 
 2. **Clone the Repository**
    ```bash
-   git clone https://github.com/ROBOTIS-GIT/open_manipulator.git
+   git clone https://github.com/SybilSystem001/open_manipulator_x.git
    cd open_manipulator
    ```
 
-3. **Container Management**
+3. **Build Container Image**
+   #Inside the folder where the dockerfile is located (Open_manipulator_x/docker)  run
+   ```bashdocker build -t forge-open-manipulator . ```
+
+5. **Container Management**
+
    The repository includes a container management script with the following commands:
 
    ```bash
@@ -61,7 +66,7 @@ This method provides an isolated environment with all dependencies pre-installed
 
    [***Note***] <u>When stopping the container, you'll be asked for confirmation as this will remove all unsaved data in the container.</u>
 
-4. **Data Persistence**
+6. **Data Persistence**
    The container maps the following directories for data persistence:
    - `./docker/workspace:/workspace` - The workspace directory inside the docker folder is mapped to `/workspace` inside the container
 
@@ -101,7 +106,7 @@ Follow these steps if you prefer to install directly on your host system:
    git clone -b jazzy https://github.com/ROBOTIS-GIT/DynamixelSDK.git && \
    git clone -b jazzy https://github.com/ROBOTIS-GIT/dynamixel_interfaces.git && \
    git clone -b jazzy https://github.com/ROBOTIS-GIT/dynamixel_hardware_interface.git && \
-   git clone -b jazzy https://github.com/ROBOTIS-GIT/open_manipulator.git
+   git clone -b jazzy https://github.com/SybilSystem001/open_manipulator_x.git
    ```
 
 4. **Install ROS 2 Dependencies**
