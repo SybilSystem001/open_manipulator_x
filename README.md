@@ -168,6 +168,8 @@ ros2 launch open_manipulator_gui omx_gui.launch.py
 ```bash
 # MoveIt! for OpenMANIPULATOR-X
 ros2 launch open_manipulator_moveit_config omx_moveit.launch.py
+# Moveit pick and place script (Run it simultaneusly in a separate terminal)
+ros2 run hello_moveit hello_moveit
 ```
 
 ### **E. Description Launch**
