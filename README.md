@@ -66,7 +66,7 @@ This method provides an isolated environment with all dependencies pre-installed
 
    [***Important***] <u>Data Persistence Rules:
    - Data in `/workspace` inside the container is saved to `docker/workspace` on your host
-   - To exit container type "exit" to keep current cointainer without deleting any saved data in the container (this is not persistant meaning it dissapears when the container is stopped)
+   - To exit container type "exit" to keep current the container without deleting any saved data inside (Note: this is not persistant meaning it dissapears when the container is stopped)
    - Container restart (using `docker restart`) maintains all data
    - Container removal (using `container.sh stop`) will remove all data except what's in the mapped `/workspace` directory
    - Always save your work in the `/workspace` directory to ensure it persists after container removal</u>
