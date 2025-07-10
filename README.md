@@ -88,8 +88,8 @@ Follow these steps if you prefer to install directly on your host system:
      ```
      **A login and logout are required.**
 
-2. **Install Intel RealSense ROS Wrapper**
-
+2. **Install Luxonis Depthai ROS Wrapper**
+   sudo apt install ros-jazzy-depthai-ros
    Please follow the official instructions for installing and using the RealSense ROS wrapper at:
    - https://github.com/IntelRealSense/realsense-ros
 
