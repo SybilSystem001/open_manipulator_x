@@ -43,8 +43,8 @@ This method provides an isolated environment with all dependencies pre-installed
    ```
 
 3. **Build Container Image**
-   #Inside the folder where the dockerfile (Open_manipulator_x/docker)is loceted run
-   docker build -t forge-open-manipulator .
+   #Inside the folder where the dockerfile is located (Open_manipulator_x/docker)  run
+   ```bashdocker build -t forge-open-manipulator . ```
 
 5. **Container Management**
 
@@ -106,7 +106,7 @@ Follow these steps if you prefer to install directly on your host system:
    git clone -b jazzy https://github.com/ROBOTIS-GIT/DynamixelSDK.git && \
    git clone -b jazzy https://github.com/ROBOTIS-GIT/dynamixel_interfaces.git && \
    git clone -b jazzy https://github.com/ROBOTIS-GIT/dynamixel_hardware_interface.git && \
-   git clone -b jazzyhttps://github.com/SybilSystem001/open_manipulator_x.git
+   git clone -b jazzy https://github.com/SybilSystem001/open_manipulator_x.git
    ```
 
 4. **Install ROS 2 Dependencies**
