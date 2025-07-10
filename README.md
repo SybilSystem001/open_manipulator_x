@@ -129,17 +129,25 @@ Follow these steps if you prefer to install directly on your host system:
    ```
 
 8. **Set environment variables to conect to the turtlebot 4 (Runing ROS@ Jazzy)**
-   ```bash
    # open the script located in the folder, with the same environment variables as the TB4 current values:
-   #Ip address: 192.168.0.1# (this value is on the turtlebot screen)
-   #discovery server id: 16
-   #create3 port:8080 
+    Note: the turtlebot for is working with the namespace = /tb4_jazzy
+  - Ip address: 192.168.0.1# (this value is on the turtlebot screen)
+  - ros domain id:16
+  - discovery server id: 16
+  - create3 port:8080
+   ```bash
    ./configure_discovery.sh
+   ```
    #In order to save changes execute:
+   ```bash
    source ~/.bashrc
+   ```
    #Restart the daemon
+   ```bash
    ros2 daemon stop; ros2 daemon start
+   ```
    #Check the topic list to see if they are connected
+   ```bash
    ros2 topic list
    ```
 
