@@ -41,7 +41,7 @@ start_container() {
     sudo udevadm trigger
 
     # Pull the latest images
-    # docker compose -f "${SCRIPT_DIR}/docker-compose.yml" pull
+    docker compose -f "${SCRIPT_DIR}/docker-compose.yml" pull
 
     # Run docker-compose
     docker compose -f "${SCRIPT_DIR}/docker-compose.yml" up -d
