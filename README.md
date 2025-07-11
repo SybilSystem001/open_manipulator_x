@@ -132,7 +132,7 @@ Follow these steps if you prefer to install directly on your host system:
    ```
 
 8. **Set environment variables to conect to the turtlebot 4 (Runing ROS@ Jazzy)**
-   # open the script located in the folder, with the same environment variables as the TB4 current values:
+   #open the script located in the folder, with the same environment variables as the TB4 current values:
     Note: the turtlebot for is working with the namespace = /tb4_jazzy
   - Ip address: 192.168.0.1# (this value is on the turtlebot screen)
   - ros domain id:16
