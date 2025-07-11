@@ -37,8 +37,10 @@ This method provides an isolated environment with all dependencies pre-installed
    ```
 
 3. **Build Container Image**
-   #Inside the folder where the dockerfile is located (Open_manipulator_x/docker)  run
-   ```bashdocker build -t forge-open-manipulator . ```
+   #Inside the folder where the dockerfile is located (Open_manipulator_x/docker) run
+   ```bash
+   docker build -t forge-open-manipulator .
+   ```
 
 5. **Container Management**
 
@@ -166,6 +168,7 @@ Below is a comprehensive list of available launch files, grouped by function. Us
 ```bash
 # Launch OpenMANIPULATOR-X hardware
 ros2 launch open_manipulator_bringup omx.launch.py
+#launch in case of OpenCR
 ros2 launch open_manipulator_bringup omx.launch.py port_name:=/dev/ttyACM0
 
 ```
