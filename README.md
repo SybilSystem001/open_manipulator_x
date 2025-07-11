@@ -86,7 +86,7 @@ Follow these steps if you prefer to install directly on your host system:
    - **USB Port Permissions**
      To enable communication with the hardware, add your user to the `dialout` group:
      ```bash
-     sudo usermod -aG dialout $USER
+     sudo usermod -a -G dialout $USER
      ```
      **A login and logout are required.**
 
