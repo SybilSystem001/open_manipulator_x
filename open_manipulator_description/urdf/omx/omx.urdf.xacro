@@ -6,12 +6,16 @@
   <xacro:arg name="fake_sensor_commands" default="false" />
   <xacro:arg name="port_name" default="/dev/ttyUSB0" />
   <xacro:arg name="ros2_control_type" default="omx" />
-
+  <xacro:property name="PI" value="3.14159274"/>
+  
   <xacro:include filename="$(find open_manipulator_description)/gazebo/omx.gazebo.xacro" />
 
   <xacro:include filename="$(find open_manipulator_description)/urdf/omx/omx_arm.urdf.xacro" />
 
   <xacro:include filename="$(find open_manipulator_description)/ros2_control/$(arg ros2_control_type).ros2_control.xacro" />
+  
+  <xacro:include filename="$(find open_manipulator_description)/urdf/camera/camera.xacro"/>
+  
 
   <link name="world"/>
 
@@ -29,6 +33,12 @@
     use_fake_hardware="$(arg use_fake_hardware)"
     fake_sensor_commands="$(arg fake_sensor_commands)"
     port_name="$(arg port_name)"/>
+
+    <!-- Camera -->
+  <xacro:camera_v0 parent="world">
+    <origin xyz="0.2 0.6 0.7" rpy="0 ${PI/2} 0"/>
+  </xacro:camera_v0>
+  <xacro:camera_gazebo_v0/>
 
   <gazebo>
     <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
