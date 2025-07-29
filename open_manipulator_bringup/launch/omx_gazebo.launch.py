@@ -146,7 +146,13 @@ def generate_launch_description():
         arguments=['/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock'],
         output='screen',
     )
-
+    # Bridge camera
+    bridgec = Node(
+        package='ros_gz_bridge',
+        executable='parameter_bridge',
+        arguments=['/image_raw@sensor_msgs/msg/Image@gz.msgs.Image'],
+        output='screen'
+    )
     # rviz_config_file = os.path.join(
     #     open_manipulator_description_path, 'rviz', 'open_manipulator.rviz'
     # )
@@ -173,6 +179,7 @@ def generate_launch_description():
             )
         ),
         bridge,
+        bridgec,
         gazebo_resource_path,
         arguments,
         gazebo,

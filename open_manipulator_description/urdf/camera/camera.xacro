@@ -16,7 +16,7 @@
 		    <mesh filename="package://open_manipulator_description/meshes/camera/visual/camera.stl"/>
 		  </geometry>
 		<material name="black">
-      <color rgba="0 0 0 1"/>
+      <color rgba="0.05 0.05 0.05 1"/>
     </material>
 	  </visual>
 	  

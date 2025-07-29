@@ -35,8 +35,8 @@
     port_name="$(arg port_name)"/>
 
     <!-- Camera -->
-  <xacro:depthai_camera parent="world">
-    <origin xyz="0.2 0.6 0.2" rpy="${PI/2} 0 ${PI/2}"/>
+  <xacro:depthai_camera parent="link5">
+    <origin xyz="0.068 0 0.059" rpy="${PI/2} 0 ${PI/2}"/>
   </xacro:depthai_camera>
   <xacro:camera_gazebo_v0/>
 
