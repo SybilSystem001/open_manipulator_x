@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
-<robot name="delirobo" xmlns:xacro="http://ros.org/wiki/xacro">
+<robot name="depthai_camera" xmlns:xacro="http://ros.org/wiki/xacro">
 
   <xacro:include filename="$(find open_manipulator_description)/urdf/camera/camera.gazebo"/>
 
-  <xacro:macro name="camera_v0" params="parent *joint_origin">
+  <xacro:macro name="depthai_camera" params="parent *joint_origin">
 	<joint name="camera_joint" type="fixed">
 	  <xacro:insert_block name="joint_origin"/>
 	  <parent link="${parent}"/>
@@ -12,15 +12,20 @@
 
 	<link name="camera_link">
 	  <visual>
-		<geometry>
-		  <mesh filename="package://open_manipulator_description/meshes/camera/visual/camera.dae"/>
-		</geometry>
+		  <geometry>
+		    <mesh filename="package://open_manipulator_description/meshes/camera/visual/camera.stl"/>
+		  </geometry>
+		<material name="black">
+      <color rgba="0 0 0 1"/>
+    </material>
 	  </visual>
+	  
 	  <collision>
 		<geometry>
 		  <mesh filename="package://open_manipulator_description/meshes/camera/camera.stl"/>
 		</geometry>
 	  </collision>
+	  
 	  <inertial>
 		<origin xyz="0 0 0"/>
 		<mass value="0.1"/> 
