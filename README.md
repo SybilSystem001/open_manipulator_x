@@ -158,7 +158,11 @@ Follow these steps if you prefer to install directly on your host system:
    ```bash
    ros2 run open_manipulator_bringup om_create_udev_rules
    ```
-
+#Note: once this has been done in order to be able to work with the main pc as the host the following commands must be runned in each ROS terminal otherwise the topics will not appear:
+```bash
+unset ROS_DISCOVERY_SERVER
+unset RMW_IMPLEMENTATION
+```
 ## **3. Launch Files Overview**
 
 Below is a comprehensive list of available launch files, grouped by function. Use these to start the system in various modes, simulations, or with special features.
