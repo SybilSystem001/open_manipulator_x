@@ -45,6 +45,17 @@ RUN mkdir -p ${COLCON_WS}/src && \
 # Build
 RUN /bin/bash -c "source /opt/ros/${ROS_DISTRO}/setup.bash && \
     cd ${COLCON_WS} && colcon build --symlink-install --executor sequential"
+    
+RUN rm -rf /usr/src/gtest /usr/src/gmock || true
+RUN rm -rf opt/ros/jazzy/share/urdfdom
+
+RUN apt-get update && apt-get install -y gfortran
+RUN apt-get update && \
+    rosdep update --rosdistro "${ROS_DISTRO}" && \
+    rosdep install --from-paths src --rosdistro "${ROS_DISTRO}" --ignore-src -r -y && \
+    rm -rf /var/lib/apt/lists/*
+    
+RUN /bin/bash -c "colcon build --symlink-install --executor sequential --packages-select open_manipulator open_manipulator_bringup open_manipulator_description ros2_controller"
 
 RUN echo "source /opt/ros/${ROS_DISTRO}/setup.bash" >> ~/.bashrc  && \
     echo "source ${COLCON_WS}/install/setup.bash" >> ~/.bashrc  && \

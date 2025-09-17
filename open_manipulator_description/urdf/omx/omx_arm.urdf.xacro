@@ -179,6 +179,39 @@
       </inertial>
     </link>
 
+    <joint name="${prefix}Camera_joint" type="fixed">
+      <parent link="${prefix}link5"/>
+      <child link="${prefix}Camera_bracket"/>
+      <origin xyz="0.0 -0.0445 -0.025" rpy="0 0 0"/>
+    </joint>
+
+    <link name="${prefix}Camera_bracket">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="${meshes_file_direction}/Camera_bracket.STL" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <material name="grey">
+          <color rgba="0.2 0.2 0.2 1"/>
+        </material>
+      </visual>
+
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="${meshes_file_direction}/Camera_bracket.STL" scale="0.001 0.001 0.001"/>
+        </geometry>
+      </collision>
+
+       <inertial>
+        <origin xyz="4.4206755e-02 3.6839985e-07 8.9142216e-03" />
+        <mass value="1.4327573e-01" />
+        <inertia ixx="8.0870749e-05" ixy="0.0" ixz="-1.0157896e-06"
+                 iyy="7.5980465e-05" iyz="0.0"
+                 izz="9.3127351e-05" />
+      </inertial>
+    </link>
+
     <joint name="${prefix}gripper_left_joint" type="prismatic">
       <parent link="${prefix}link5"/>
       <child link="${prefix}gripper_left_link"/>

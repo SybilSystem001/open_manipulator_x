@@ -10,6 +10,8 @@
 	  <child link="camera_link"/>
 	</joint>
 
+
+
 	<link name="camera_link">
 	  <visual>
 		  <geometry>
