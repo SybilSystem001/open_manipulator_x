@@ -51,8 +51,13 @@
     <disable_collisions link1="gripper_left_link" link2="gripper_right_link" reason="Never"/>
     <disable_collisions link1="gripper_left_link" link2="link4" reason="Never"/>
     <disable_collisions link1="gripper_left_link" link2="link5" reason="Adjacent"/>
+    <disable_collisions link1="gripper_left_link" link2="Camera_bracket" reason="Never"/>
+    <disable_collisions link1="gripper_left_link" link2="camera_link" reason="Never"/>
     <disable_collisions link1="gripper_right_link" link2="link4" reason="Never"/>
     <disable_collisions link1="gripper_right_link" link2="link5" reason="Adjacent"/>
+    <disable_collisions link1="gripper_right_link" link2="Camera_bracket" reason="Never"/>
+    <disable_collisions link1="gripper_right_link" link2="camera_link" reason="Never"/>
+    
     <disable_collisions link1="link1" link2="link2" reason="Adjacent"/>
     <disable_collisions link1="link1" link2="link3" reason="Never"/>
     <disable_collisions link1="link2" link2="link3" reason="Adjacent"/>
